@@ -14,6 +14,7 @@
 			height: 100%;
 			overflow: hidden;
 			background: #000;
+			user-select: none;
 		}
 	</style>
 
@@ -42,6 +43,14 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		const btn = document.getElementById('gouzi_btn')
+
+		const isMobile = /Mobile/gi.test(navigator.userAgent);
+		if (isMobile) {
+			btn.style.zoom = "200%"
+		}
+	</script>
 	<script>
 		function musicPlay(isPlay) {
             var media = document.querySelector('#audioDom');
@@ -349,14 +358,6 @@
 		frame();
 	</script>
 	<script src="index.js"></script>
-	<script>
-		const btn = document.getElementById('gouzi_btn')
-
-		const isMobile = /Mobile/gi.test(navigator.userAgent);
-		if (isMobile) {
-			btn.style.zoom = "200%"
-		}
-	</script>
 </body>
 
 </html>
