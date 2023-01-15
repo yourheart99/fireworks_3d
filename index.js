@@ -282,7 +282,7 @@ S.UI = (function () {
     // });
 
     canvas.addEventListener('click', function (e) {
-      overlay.classList.remove('overlay--visible');
+      // overlay.classList.remove('overlay--visible');
     });
   }
 
