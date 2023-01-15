@@ -12,30 +12,7 @@
 
 */
 
-
-var S = {
-  init: function () {
-    var action = window.location.href,
-        i = action.indexOf('?a=');
-
-    S.Drawing.init('.canvas');
-    document.body.classList.add('body--ready');
-
-    if (i !== -1) {
-      S.UI.simulate(decodeURI(action).substring(i + 3));
-    } else {
-      // 倒计时修改这句中的数字，不需要倒计时删除“|#countdown 3|”，换内容修改文字
-      S.UI.simulate('|#countdown 3||2023|新|年|快|乐|#rectangle|');
-    }
-
-    S.Drawing.loop(function () {
-      S.Shape.render();
-    });
-  }
-  
-};
-
-
+/** 定义 S 的地方移到 index.html 里面 */
 S.Drawing = (function () {
   var canvas,
       context,
@@ -234,55 +211,6 @@ S.UI = (function () {
         reset();
         performAction(input.value);
       }
-    });
-
-    // input.addEventListener('input', checkInputWidth);
-    // input.addEventListener('change', checkInputWidth);
-    // input.addEventListener('focus', checkInputWidth);
-
-    // help.addEventListener('click', function (e) {
-    //   overlay.classList.toggle('overlay--visible');
-    //   overlay.classList.contains('overlay--visible') && reset(true);
-    // });
-
-    // commands.addEventListener('click', function (e) {
-    //   var el,
-    //       info,
-    //       demo,
-    //       tab,
-    //       active,
-    //       url;
-    //
-    //   if (e.target.classList.contains('commands-item')) {
-    //     el = e.target;
-    //   } else {
-    //     el = e.target.parentNode.classList.contains('commands-item') ? e.target.parentNode : e.target.parentNode.parentNode;
-    //   }
-    //
-    //   info = el && el.querySelector('.commands-item-info');
-    //   demo = el && info.getAttribute('data-demo');
-    //   url = el && info.getAttribute('data-url');
-    //
-    //   if (info) {
-    //     overlay.classList.remove('overlay--visible');
-    //
-    //     if (demo) {
-    //       input.value = demo;
-    //
-    //       if (isTouch) {
-    //         reset();
-    //         performAction(input.value);
-    //       } else {
-    //         input.focus();
-    //       }
-    //     } else if (url) {
-    //       //window.location = url;
-    //     }
-    //   }
-    // });
-
-    canvas.addEventListener('click', function (e) {
-      // overlay.classList.remove('overlay--visible');
     });
   }
 
